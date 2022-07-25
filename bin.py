@@ -2,7 +2,7 @@ import requests
 import telebot
 
 bot = telebot.TeleBot("your api")
-author_name = 'yout name'
+author_name = 'your name'
 
 
 @bot.message_handler(commands=['start'])
