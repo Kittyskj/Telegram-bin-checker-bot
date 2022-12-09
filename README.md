@@ -1,5 +1,5 @@
 # Telegram-bin-checker-bot
-Telegram bot to checks bin from https://binlist.net
+Telegram bot to checks card bin from https://binlist.net
 
 pip3 install -r requirements.txt
 
