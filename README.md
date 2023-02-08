@@ -1,8 +1,8 @@
 # Telegram-bin-checker-bot
-Telegram bot to checks card bin from https://binlist.net
+Telegram bot to check card bin info from https://binlist.net
 
 pip3 install -r requirements.txt
 
-pyhton bin.py
+pyhton/python3 bin.py
 
-need python 3.9/3.10.+
+To use need python 3.9/3.10.+
