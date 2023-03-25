@@ -1,8 +1,12 @@
 import requests
 import telebot
+import emoji
 
 bot = telebot.TeleBot("your api")
 author_name = 'your name'
+
+hrestik = emoji.emojize(":cross_mark:")
+galochka = emoji.emojize(":check_mark:")
 
 
 @bot.message_handler(commands=['start'])
@@ -50,12 +54,38 @@ def get_bin(bin):
         bank_url = my_json.get('bank').get('url')
         bank_phone = my_json.get('bank').get('phone')
         bank_city = my_json.get('bank').get('city')
-        return f" Інфо: Довжина номеру карти: {bin_length}\n Алогритм луна: {bin_luhn}\n " \
+        poluchaem = perepid(prepaid)
+        poluch = luhna(bin_luhn)
+        site = sitebank(bank_url)
+        cityx = city(bank_city)
+        return f" Інфо: Довжина номеру карти: {bin_length}\n Алогритм луна: {poluch}\n " \
                f" Схема платіжної системи: {scheme_bin}\n Тип карти: {type_bin}\n " \
-               f" Бренд картки: {brand}\n Передоплата: {prepaid}\n " \
+               f" Бренд картки: {brand}\n Передоплата: {poluchaem}\n " \
                f" Країна за номером: {country_numeric}\n Абревіатура Країни: {country_alpha2}\n Назва Країни: {country_name}\n Прапор Країни: {country_emoji}\n Валюта країни: {country_currency}\n " \
-               f" Назва Банку: {bank_name}\n Сайт банку: {bank_url}\n Номер телефона банка: {bank_phone}\n Місто банка: {bank_city}\n "
+               f" Назва Банку: {bank_name}\n Сайт банку: {site}{bank_url}\n Номер телефона банка: {bank_phone}\n Місто банка: {cityx}{bank_city}\n "
     return "Такого біна не існує! Спробуйте ще раз"
 
+
+def perepid(TrueFalse):
+    if str(TrueFalse) == "False":
+        return hrestik
+    elif str(TrueFalse) == "True":
+        return galochka
+
+
+def luhna(TrueFals):
+    if str(TrueFals) == "False":
+        return hrestik
+    elif str(TrueFals) == "True":
+        return galochka
+
+
+def sitebank(TrueFals):
+    if str(TrueFals) == "None":
+        return hrestik
+
+def city(TrueFals):
+    if str(TrueFals) == "None":
+        return hrestik
 
 bot.polling(none_stop=True)
