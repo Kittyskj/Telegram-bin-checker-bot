@@ -1,14 +1,13 @@
 # Telegram-bin-checker-bot
 Telegram bot to check card bin info from https://binlist.net
 
-
-> git clone https://github.com/Kittyskj/Telegram-bin-checker-bot/
->
-> pip3 install -r requirements.txt
-> 
->python/python3 bin.py
->
->To use require python 3.9/3.11
-
+## Installation Linux/Unix
+```bash
+# After cloning change api and name to your
+git clone https://github.com/Kittyskj/Telegram-bin-checker-bot/ \
+&& cd Telegram-bin-checker-bot \
+&& pip install -r requirements.txt \
+&& python bin.py
+```
 
 Known problem issue with rate limit 😔 
